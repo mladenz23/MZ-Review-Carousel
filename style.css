@@ -1,0 +1,18 @@
+:root {
+  --bg: #201f1f;
+  --text: #e7e2e2;
+  --dred: #740000;
+  --lred: #c02828;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text);
+}
