@@ -11,12 +11,12 @@
   <body>
     <main>
       <div id="title">
-        <h1>Send us a review</h1>
+        <h1>Send us a Review</h1>
         <div></div>
       </div>
 
       <div id="container">
-        <form action="./review.html">
+        <form id="msgForm" action="./review.html" method="get">
           <div id="imgDiv">
             <label for="avatar" id="avatarLabel">Upload image</label>
             <input
@@ -29,7 +29,7 @@
 
           <div class="redBar"></div>
           <label for="rating">Rate Us: </label>
-          <select class="form-input" name="ratings" id="rating">
+          <select class="form-input" name="ratings" id="rating" required>
             <option value="" selected>Choose rating</option>
             <option value="five">⭐⭐⭐⭐⭐</option>
             <option value="four">⭐⭐⭐⭐</option>
@@ -66,7 +66,7 @@
           <textarea
             class="form-input"
             id="Message"
-            name="Message"
+            name="message"
             placeholder="Write your message here"
             rows="10"
             cols="60"
@@ -76,8 +76,9 @@
         <button
           id="btnSubmit"
           type="submit"
+          form="msgForm"
+          formmethod="get"
           formaction="./review.html"
-          formmethod="post"
         >
           Submit
         </button>

@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
   /* Colors */
   --bg: #201f1f;
   --dark: #444;
+  --darker: #222;
   --text: #e7e2e2;
+  --text-darker: #ccc;
   --dred: #740000;
   --lred: #c02828;
 
+  /* background */
+  --gradient: linear-gradient(var(--lred), var(--dred));
+
   /* Fonts */
   --FF: 'Parkinsans', sans-serif;
+  --shadow: -1px 0 2px var(--bg), 0 1px 2px var(--bg), 1px 0 2px var(--bg),
+    0 -1px 2px var(--bg);
+  --shadow-red: 5px 5px var(--dred);
 }
 
 * {
@@ -33,14 +42,14 @@ main {
 
 #title h1 {
   font-weight: 400;
-  margin: 0 0 5px 0;
+  margin: 0px 0 5px 0;
 }
 
 #title div,
 .redBar {
   height: 20px;
   width: inherit;
-  background: linear-gradient(var(--lred), var(--dred));
+  background: var(--gradient);
   transform: skewX(-25deg);
 }
 
@@ -51,7 +60,8 @@ main {
   margin-left: 6px;
 }
 
-#container {
+#container,
+#contReview {
   margin-top: 50px;
 }
 
@@ -63,12 +73,12 @@ main {
 #container label {
   z-index: 1;
   margin: -2px 0 -1px 15px;
-  text-shadow: -1px 0 2px var(--bg), 0 1px 2px var(--bg), 1px 0 2px var(--bg),
-    0 -1px 2px var(--bg);
+  text-shadow: var(--shadow);
 }
 
 .form-input,
-#avatarLabel {
+#avatarLabel,
+#btnSubmit {
   border: 2px solid var(--dark);
   background: transparent;
   color: var(--text);
@@ -99,9 +109,10 @@ input:focus {
   display: none;
 }
 
-#avatarLabel {
+#avatarLabel,
+#btnSubmit {
   display: inline-block;
-  background: linear-gradient(var(--lred), var(--dred));
+  background: var(--gradient);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -114,4 +125,61 @@ input:focus {
 
 #imgDiv label {
   margin-left: 0;
+}
+
+#btnSubmit {
+  display: flex;
+  margin: 30px auto;
+  text-shadow: var(--shadow);
+}
+
+#contReview {
+  padding: 30px;
+  border: 2px solid var(--dark);
+  background-color: var(--darker);
+  box-shadow: var(--shadow-red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+/* #avatarWrapper {
+  background-color: var(--dred);
+  border-radius: 100%;
+  height: 150px;
+} */
+
+#contReview p:first-of-type {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 20px;
+  color: var(--text-darker);
+}
+
+#contReview p:nth-of-type(2) {
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  color: var(--lred);
+  font-weight: 300;
+  font-size: 15px;
+}
+
+#contReview p:nth-of-type(3) {
+  margin: 0;
+  font-weight: 100;
+  color: #fff;
+  font-size: 15px;
+}
+
+#avatarWrapper > #quotes {
+  font-size: 50px;
+  position: absolute;
+  background: var(--gradient);
+  font-family: 'Space Grotesk';
+  font-weight: 900;
+  border-radius: 50%;
+  margin: 0;
+  padding: 22.5px 7.5px 0 7.5px;
+  line-height: 15px;
 }
