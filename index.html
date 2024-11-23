@@ -9,9 +9,79 @@
     <script defer src="./index.js"></script>
   </head>
   <body>
-    <h1>Send us a review</h1>
-    <div id="container">
-      <form action="./review.html"></form>
-    </div>
+    <main>
+      <div id="title">
+        <h1>Send us a review</h1>
+        <div></div>
+      </div>
+
+      <div id="container">
+        <form action="./review.html">
+          <div id="imgDiv">
+            <label for="avatar" id="avatarLabel">Upload image</label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              accept=".png, .jpg, .jpeg"
+            />
+          </div>
+
+          <div class="redBar"></div>
+          <label for="rating">Rate Us: </label>
+          <select class="form-input" name="ratings" id="rating">
+            <option value="" selected>Choose rating</option>
+            <option value="five">⭐⭐⭐⭐⭐</option>
+            <option value="four">⭐⭐⭐⭐</option>
+            <option value="three">⭐⭐⭐</option>
+            <option value="two">⭐⭐</option>
+            <option value="one">⭐</option>
+          </select>
+
+          <div class="redBar"></div>
+          <label for="name">Name: </label>
+          <input
+            class="form-input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John Doe"
+            autofocus
+            required
+          />
+
+          <div class="redBar"></div>
+          <label for="occupation">Occupation: </label>
+          <input
+            class="form-input"
+            type="text"
+            id="occupation"
+            name="occupation"
+            placeholder="Accountant"
+            required
+          />
+
+          <div class="redBar"></div>
+          <label for="Message">Message: </label>
+          <textarea
+            class="form-input"
+            id="Message"
+            name="Message"
+            placeholder="Write your message here"
+            rows="10"
+            cols="60"
+            required
+          ></textarea>
+        </form>
+        <button
+          id="btnSubmit"
+          type="submit"
+          formaction="./review.html"
+          formmethod="post"
+        >
+          Submit
+        </button>
+      </div>
+    </main>
   </body>
 </html>
